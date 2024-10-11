@@ -16,6 +16,26 @@ namespace Supermarket_mvp.Views
         private bool isEdit;
         private bool isSuccesful;
         private string message;
+
+        // campo estatico para evitar abrir muchas veces un formulario
+        private static PayModeView instance;
+
+        public static PayModeView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PayModeView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
         public PayModeView()
         {
             InitializeComponent();
@@ -40,11 +60,13 @@ namespace Supermarket_mvp.Views
                 }
             };
         }
-        public string PayModeId { 
+        public string PayModeId
+        {
             get { return TxtPayModeId.Text; }
             set { TxtPayModeId.Text = value; }
-            }
-        public string PayModeName {
+        }
+        public string PayModeName
+        {
             get { return TxtPayModeName.Text; }
             set { TxtPayModeName.Text = value; }
         }
@@ -53,20 +75,24 @@ namespace Supermarket_mvp.Views
             get { return TxtPayModeObservation.Text; }
             set { TxtPayModeObservation.Text = value; }
         }
-    
-        public string SearchValue {
-        get { return TxtSearch.Text;  }
-        set { TxtSearch.Text = value; }
+
+        public string SearchValue
+        {
+            get { return TxtSearch.Text; }
+            set { TxtSearch.Text = value; }
         }
-        public bool IsEdit {
+        public bool IsEdit
+        {
             get { return isEdit; }
-            set { IsEdit = value;}
+            set { IsEdit = value; }
         }
-        public bool IsSuccesful {
+        public bool IsSuccesful
+        {
             get { return isSuccesful; }
             set { IsSuccesful = value; }
         }
-        public string Message {
+        public string Message
+        {
             get { return message; }
             set { message = value; }
         }
@@ -82,5 +108,8 @@ namespace Supermarket_mvp.Views
         {
             DgPayMode.DataSource = payModeList;
         }
+
+        
+    
     }
 }
