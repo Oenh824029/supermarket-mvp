@@ -42,8 +42,8 @@
             TxtSearch = new TextBox();
             label2 = new Label();
             tabPageCategorieDetail = new TabPage();
-            button2 = new Button();
-            button1 = new Button();
+            BtnCancel = new Button();
+            BtnSave = new Button();
             TxtCategorieDesc = new TextBox();
             label5 = new Label();
             TxtCategorieName = new TextBox();
@@ -204,8 +204,8 @@
             // 
             // tabPageCategorieDetail
             // 
-            tabPageCategorieDetail.Controls.Add(button2);
-            tabPageCategorieDetail.Controls.Add(button1);
+            tabPageCategorieDetail.Controls.Add(BtnCancel);
+            tabPageCategorieDetail.Controls.Add(BtnSave);
             tabPageCategorieDetail.Controls.Add(TxtCategorieDesc);
             tabPageCategorieDetail.Controls.Add(label5);
             tabPageCategorieDetail.Controls.Add(TxtCategorieName);
@@ -220,23 +220,23 @@
             tabPageCategorieDetail.Text = "Categorie Detail";
             tabPageCategorieDetail.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnCancel
             // 
-            button2.Location = new Point(204, 272);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 7;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            BtnCancel.Image = Properties.Resources.cancel;
+            BtnCancel.Location = new Point(204, 272);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(94, 47);
+            BtnCancel.TabIndex = 7;
+            BtnCancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BtnSave
             // 
-            button1.Location = new Point(34, 272);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            BtnSave.Image = Properties.Resources.save;
+            BtnSave.Location = new Point(34, 272);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(94, 47);
+            BtnSave.TabIndex = 6;
+            BtnSave.UseVisualStyleBackColor = true;
             // 
             // TxtCategorieDesc
             // 
@@ -278,8 +278,11 @@
             // 
             TxtCategorieId.Location = new Point(34, 36);
             TxtCategorieId.Name = "TxtCategorieId";
+            TxtCategorieId.ReadOnly = true;
             TxtCategorieId.Size = new Size(125, 27);
             TxtCategorieId.TabIndex = 1;
+            TxtCategorieId.Text = "0";
+            TxtCategorieId.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -336,7 +339,7 @@
         private Label label3;
         private TextBox TxtCategorieDesc;
         private Label label5;
-        private Button button2;
-        private Button button1;
+        private Button BtnCancel;
+        private Button BtnSave;
     }
 }

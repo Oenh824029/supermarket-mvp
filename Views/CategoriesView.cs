@@ -63,6 +63,55 @@ namespace Supermarket_mvp.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
+
+            BtnNew.Click += delegate { 
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl2.TabPages.Remove(tabPageCategorieList);
+                tabControl2.TabPages.Add(tabPageCategorieDetail);
+                tabPageCategorieDetail.Text = "Add New Categorie";
+            };
+            BtnEdit.Click += delegate { 
+                EditEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl2.TabPages.Remove(tabPageCategorieList);
+                tabControl2.TabPages.Add(tabPageCategorieDetail);
+                tabPageCategorieDetail.Text = "Edit New Categorie";
+            };
+            BtnDelete.Click += delegate { 
+                
+                //DeleteEvent?.Invoke(this, EventArgs.Empty);
+
+                var result = MessageBox.Show(
+                    "Are you sure you want to delete the selected Categorie?",
+                    "Warning",
+                    MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+                if(result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+            
+            BtnSave.Click += delegate { 
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
+                if (IsSuccesful)
+                {
+                    tabControl2.TabPages.Remove(tabPageCategorieDetail);
+                    tabControl2.TabPages.Add(tabPageCategorieList);
+                }
+                MessageBox.Show(Message);
+            };
+            
+            
+            BtnCancel.Click += delegate { 
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl2.TabPages.Remove(tabPageCategorieDetail);
+                tabControl2.TabPages.Add(tabPageCategorieList);
+            };
         }
 
 
