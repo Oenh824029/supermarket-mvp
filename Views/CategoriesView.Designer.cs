@@ -31,7 +31,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            tabControl1 = new TabControl();
+            tabControl2 = new TabControl();
             tabPageCategorieList = new TabPage();
             BtnClose = new Button();
             BtnDelete = new Button();
@@ -42,17 +42,17 @@
             TxtSearch = new TextBox();
             label2 = new Label();
             tabPageCategorieDetail = new TabPage();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            label4 = new Label();
-            textBox2 = new TextBox();
-            label5 = new Label();
-            textBox3 = new TextBox();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
+            TxtCategorieDesc = new TextBox();
+            label5 = new Label();
+            TxtCategorieName = new TextBox();
+            label4 = new Label();
+            TxtCategorieId = new TextBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tabControl1.SuspendLayout();
+            tabControl2.SuspendLayout();
             tabPageCategorieList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgCategorie).BeginInit();
             tabPageCategorieDetail.SuspendLayout();
@@ -88,16 +88,16 @@
             label1.TabIndex = 0;
             label1.Text = "Categories";
             // 
-            // tabControl1
+            // tabControl2
             // 
-            tabControl1.Controls.Add(tabPageCategorieList);
-            tabControl1.Controls.Add(tabPageCategorieDetail);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 90);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 360);
-            tabControl1.TabIndex = 1;
+            tabControl2.Controls.Add(tabPageCategorieList);
+            tabControl2.Controls.Add(tabPageCategorieDetail);
+            tabControl2.Dock = DockStyle.Fill;
+            tabControl2.Location = new Point(0, 90);
+            tabControl2.Name = "tabControl2";
+            tabControl2.SelectedIndex = 0;
+            tabControl2.Size = new Size(800, 360);
+            tabControl2.TabIndex = 1;
             // 
             // tabPageCategorieList
             // 
@@ -198,11 +198,11 @@
             // 
             tabPageCategorieDetail.Controls.Add(button2);
             tabPageCategorieDetail.Controls.Add(button1);
-            tabPageCategorieDetail.Controls.Add(textBox3);
+            tabPageCategorieDetail.Controls.Add(TxtCategorieDesc);
             tabPageCategorieDetail.Controls.Add(label5);
-            tabPageCategorieDetail.Controls.Add(textBox2);
+            tabPageCategorieDetail.Controls.Add(TxtCategorieName);
             tabPageCategorieDetail.Controls.Add(label4);
-            tabPageCategorieDetail.Controls.Add(textBox1);
+            tabPageCategorieDetail.Controls.Add(TxtCategorieId);
             tabPageCategorieDetail.Controls.Add(label3);
             tabPageCategorieDetail.Location = new Point(4, 29);
             tabPageCategorieDetail.Name = "tabPageCategorieDetail";
@@ -212,39 +212,32 @@
             tabPageCategorieDetail.Text = "Categorie Detail";
             tabPageCategorieDetail.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // button2
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(34, 13);
-            label3.Name = "label3";
-            label3.Size = new Size(94, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Categorie Id";
+            button2.Location = new Point(204, 272);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 7;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button1
             // 
-            textBox1.Location = new Point(34, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 1;
+            button1.Location = new Point(34, 272);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // TxtCategorieDesc
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(34, 86);
-            label4.Name = "label4";
-            label4.Size = new Size(122, 20);
-            label4.TabIndex = 2;
-            label4.Text = "Categorie Name";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(34, 109);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(264, 27);
-            textBox2.TabIndex = 3;
+            TxtCategorieDesc.Location = new Point(34, 177);
+            TxtCategorieDesc.Multiline = true;
+            TxtCategorieDesc.Name = "TxtCategorieDesc";
+            TxtCategorieDesc.PlaceholderText = "Categorie Description";
+            TxtCategorieDesc.Size = new Size(264, 77);
+            TxtCategorieDesc.TabIndex = 5;
             // 
             // label5
             // 
@@ -256,46 +249,53 @@
             label5.TabIndex = 4;
             label5.Text = "Categorie Description";
             // 
-            // textBox3
+            // TxtCategorieName
             // 
-            textBox3.Location = new Point(34, 177);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Categorie Description";
-            textBox3.Size = new Size(264, 77);
-            textBox3.TabIndex = 5;
+            TxtCategorieName.Location = new Point(34, 109);
+            TxtCategorieName.Name = "TxtCategorieName";
+            TxtCategorieName.Size = new Size(264, 27);
+            TxtCategorieName.TabIndex = 3;
             // 
-            // button1
+            // label4
             // 
-            button1.Location = new Point(34, 272);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(34, 86);
+            label4.Name = "label4";
+            label4.Size = new Size(122, 20);
+            label4.TabIndex = 2;
+            label4.Text = "Categorie Name";
             // 
-            // button2
+            // TxtCategorieId
             // 
-            button2.Location = new Point(204, 272);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 7;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            TxtCategorieId.Location = new Point(34, 36);
+            TxtCategorieId.Name = "TxtCategorieId";
+            TxtCategorieId.Size = new Size(125, 27);
+            TxtCategorieId.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label3.Location = new Point(34, 13);
+            label3.Name = "label3";
+            label3.Size = new Size(94, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Categorie Id";
             // 
             // CategoriesView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(tabControl1);
+            Controls.Add(tabControl2);
             Controls.Add(panel1);
             Name = "CategoriesView";
             Text = "CategoriesView";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tabControl1.ResumeLayout(false);
+            tabControl2.ResumeLayout(false);
             tabPageCategorieList.ResumeLayout(false);
             tabPageCategorieList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgCategorie).EndInit();
@@ -309,7 +309,7 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox1;
-        private TabControl tabControl1;
+        private TabControl tabControl2;
         private TabPage tabPageCategorieList;
         private TabPage tabPageCategorieDetail;
         private TabPage tabPage1;
@@ -321,11 +321,11 @@
         private Button BtnDelete;
         private Button BtnNew;
         private Button BtnEdit;
-        private TextBox textBox2;
+        private TextBox TxtCategorieName;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox TxtCategorieId;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox TxtCategorieDesc;
         private Label label5;
         private Button button2;
         private Button button1;
