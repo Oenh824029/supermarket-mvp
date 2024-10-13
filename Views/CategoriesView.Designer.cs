@@ -120,7 +120,7 @@
             // BtnClose
             // 
             BtnClose.Image = Properties.Resources.cerrar;
-            BtnClose.Location = new Point(590, 254);
+            BtnClose.Location = new Point(610, 255);
             BtnClose.Name = "BtnClose";
             BtnClose.Size = new Size(146, 55);
             BtnClose.TabIndex = 7;
@@ -130,7 +130,7 @@
             // BtnDelete
             // 
             BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(590, 187);
+            BtnDelete.Location = new Point(610, 187);
             BtnDelete.Name = "BtnDelete";
             BtnDelete.Size = new Size(146, 55);
             BtnDelete.TabIndex = 6;
@@ -139,7 +139,7 @@
             // BtnNew
             // 
             BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(590, 45);
+            BtnNew.Location = new Point(610, 42);
             BtnNew.Name = "BtnNew";
             BtnNew.Size = new Size(146, 55);
             BtnNew.TabIndex = 5;
@@ -149,7 +149,7 @@
             // BtnEdit
             // 
             BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(590, 116);
+            BtnEdit.Location = new Point(610, 117);
             BtnEdit.Name = "BtnEdit";
             BtnEdit.Size = new Size(146, 55);
             BtnEdit.TabIndex = 4;
@@ -159,12 +159,13 @@
             // 
             DgCategorie.AllowUserToAddRows = false;
             DgCategorie.AllowUserToDeleteRows = false;
+            DgCategorie.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgCategorie.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgCategorie.Location = new Point(24, 96);
             DgCategorie.Name = "DgCategorie";
             DgCategorie.ReadOnly = true;
             DgCategorie.RowHeadersWidth = 51;
-            DgCategorie.Size = new Size(486, 223);
+            DgCategorie.Size = new Size(541, 223);
             DgCategorie.TabIndex = 3;
             // 
             // BtnSearch
@@ -292,6 +293,7 @@
             Controls.Add(panel1);
             Name = "CategoriesView";
             Text = "CategoriesView";
+            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

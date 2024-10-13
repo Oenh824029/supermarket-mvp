@@ -15,6 +15,25 @@ namespace Supermarket_mvp.Views
         private bool isEdit;
         private bool isSuccesful;
         private string message;
+
+        private static CategoriesView instance;
+
+        public static CategoriesView GetInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new CategoriesView();
+            }
+            else
+            {
+                if(instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
         public CategoriesView()
         {
             InitializeComponent();
