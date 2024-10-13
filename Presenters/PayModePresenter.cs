@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Supermarket_mvp.Models;
@@ -30,6 +31,7 @@ namespace Supermarket_mvp.Presenters
             this.view.AddNewEvent += AddNewPayMode;
             this.view.EditEvent   += LoadSelectPayModeToEdit;
             this.view.SaveEvent   += SavePayMode;
+            this.view.DeleteEvent += DeleteSelectedPayMode;
             this.view.CancelEvent += CancelAction;
 
             this.view.SetPayModeListBildingSource(payModeBindingSource);
@@ -38,6 +40,9 @@ namespace Supermarket_mvp.Presenters
             this.view.Show();
         }
 
+        // lógica en botones
+
+        
 
         private void loadAllPayModeList() {
 
@@ -51,17 +56,60 @@ namespace Supermarket_mvp.Presenters
 
         private void SavePayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var payMode = new PayModeModel();
+            payMode.Id = Convert.ToInt32(view.PayModeId);
+            payMode.Name = view.PayModeName;
+            payMode.Observation = view.PayModeObservation;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(payMode);
+                if (view.IsEdit)
+                {
+                    repository.Edit(payMode);
+                    view.Message = "PayMode edited successfuly";
+                }
+                else
+                {
+                    repository.Add(payMode);
+                    view.Message = "PayMode added succesfuly";
+                }
+                view.IsSuccesful = true;
+                loadAllPayModeList();
+                CleanViewFields();
+            }
+            catch (Exception ex) {
+                view.IsSuccesful = false;
+                view.Message = ex.Message;
+            }
         }
 
+        private void CleanViewFields()
+        {
+            view.PayModeId = "0";
+            view.PayModeName = "";
+            view.PayModeObservation = "";
+        }
+
+        private void CancelAction()
+        {
+            CleanViewFields();
+        }
         private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //MessageBox.Show("CLieck en botón editar");
+            var payMode = (PayModeModel) payModeBindingSource.Current;
+            view.PayModeId = payMode.Id.ToString();
+            view.PayModeName = payMode.Name;
+            view.PayModeObservation = payMode.Observation;
+
+            view.IsEdit = true;
         }
 
         private void AddNewPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            // MessageBox.Show("CLieck en botón nuevo");
+            view.IsEdit = false;
         }
 
         private void SearchPayMode(object? sender, EventArgs e)
@@ -76,6 +124,24 @@ namespace Supermarket_mvp.Presenters
             }
 
             payModeBindingSource.DataSource = payModeList;
+        }
+
+        private void DeleteSelectedPayMode(object? sender, EventArgs e)
+        {
+            try
+            {
+                var payMode = (PayModeModel) payModeBindingSource.Current;
+
+                repository.Delete(payMode.Id);
+                view.IsSuccesful = true;
+                view.Message = "Pay Mode deleted succesfully";
+                loadAllPayModeList();
+            }
+            catch (Exception ex) { 
+                view.IsSuccesful = false;
+                view.Message = "An error ocurred, could not delete pay mode";
+            }
+
         }
 
         // fin de los métodos
