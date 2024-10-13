@@ -18,11 +18,27 @@ namespace Supermarket_mvp.Views
 
         private static CategoriesView instance;
 
-        public static CategoriesView GetInstance()
+        // constructor de la clase
+        public CategoriesView()
+        {
+            InitializeComponent();
+            AssociateAndRaiseViewEvents();
+
+            // cuando se ejecuta no aparece uno de los tabs del formulario
+            tabControl2.TabPages.Remove(tabPageCategorieDetail);
+
+            BtnClose.Click += delegate { this.Close(); };
+        }
+
+        public static CategoriesView GetInstance(Form parentContainer)
         {
             if(instance == null || instance.IsDisposed)
             {
                 instance = new CategoriesView();
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
             }
             else
             {
@@ -34,14 +50,7 @@ namespace Supermarket_mvp.Views
             }
             return instance;
         }
-        public CategoriesView()
-        {
-            InitializeComponent();
-            AssociateAndRaiseViewEvents();
-
-            // cuando se ejecuta no aparece uno de los tabs del formulario
-            tabControl2.TabPages.Remove(tabPageCategorieDetail);
-        }
+        
 
         private void AssociateAndRaiseViewEvents()
         {

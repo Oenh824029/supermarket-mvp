@@ -119,6 +119,7 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
             BtnClose.Location = new Point(610, 255);
             BtnClose.Name = "BtnClose";
@@ -129,6 +130,7 @@
             // 
             // BtnDelete
             // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
             BtnDelete.Location = new Point(610, 187);
             BtnDelete.Name = "BtnDelete";
@@ -138,6 +140,7 @@
             // 
             // BtnNew
             // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.Image = Properties.Resources._new;
             BtnNew.Location = new Point(610, 42);
             BtnNew.Name = "BtnNew";
@@ -148,6 +151,7 @@
             // 
             // BtnEdit
             // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
             BtnEdit.Location = new Point(610, 117);
             BtnEdit.Name = "BtnEdit";
@@ -159,6 +163,7 @@
             // 
             DgCategorie.AllowUserToAddRows = false;
             DgCategorie.AllowUserToDeleteRows = false;
+            DgCategorie.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DgCategorie.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgCategorie.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgCategorie.Location = new Point(24, 96);
@@ -170,8 +175,9 @@
             // 
             // BtnSearch
             // 
+            BtnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearch.Image = Properties.Resources.search_small;
-            BtnSearch.Location = new Point(227, 42);
+            BtnSearch.Location = new Point(471, 46);
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(94, 46);
             BtnSearch.TabIndex = 2;
@@ -179,10 +185,11 @@
             // 
             // TxtSearch
             // 
+            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtSearch.Location = new Point(24, 53);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.PlaceholderText = "Data to Search";
-            TxtSearch.Size = new Size(178, 27);
+            TxtSearch.Size = new Size(441, 27);
             TxtSearch.TabIndex = 1;
             // 
             // label2
