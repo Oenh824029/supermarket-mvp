@@ -15,12 +15,12 @@ namespace Supermarket_mvp.Models
 
         [DisplayName("Categorie Name")]
         [Required(ErrorMessage = "Name Categorie is required")]
-        [StringLength(80, MinimumLength =6, ErrorMessage = "Categorie name must be between 6 and 80 characters")]
+        [StringLength(50, MinimumLength =3, ErrorMessage = "Categorie name must be between 6 and 80 characters")]
         public string  Name { get; set; }
 
         [DisplayName("Categorie Description")]
         [Required(ErrorMessage = "Categorie Description is Required")]
-        [StringLength(250, MinimumLength = 5, ErrorMessage = "Categorie description must be between and 250 characters")]
+        [StringLength(200, MinimumLength = 3, ErrorMessage = "Categorie description must be between and 250 characters")]
         public string Description { get; set; }
     }
 }

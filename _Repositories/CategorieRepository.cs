@@ -59,8 +59,9 @@ namespace Supermarket_mvp._Repositories
                                         WHERE Categories_Id = @id";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = categoryModel.Name;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = categoryModel.Description;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = categoryModel.Id;
                 command.ExecuteNonQuery();
-                command.ExecuteNonQuery();
+                
             }
         }
 
